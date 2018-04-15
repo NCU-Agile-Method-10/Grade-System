@@ -1,0 +1,26 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "com.tngtech.jgiven:jgiven-gradle-plugin:0.15.3"
+    }
+}
+apply plugin: "com.tngtech.jgiven.gradle-plugin"
+group 'org.agilemethod.pair10.grade_system'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile 'com.tngtech.jgiven:jgiven-junit:0.15.3'
+    testCompile 'org.assertj:assertj-core:3.9.0'
+}
