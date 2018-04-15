@@ -1,7 +1,11 @@
 package org.agilemethod.pair10.grade_system;
 
 public class UI {
-    public UI() throws NoSuchIDExceptions, NoSuchCommandExceptions {
+    public UI() {
+
+    }
+
+    public void run() throws NoSuchIDExceptions, NoSuchCommandExceptions {
 
     }
 
@@ -13,7 +17,7 @@ public class UI {
         return true;
     }
 
-    public void showWelcomeMsg() {
+    public void showWelcomeMsg(String id) {
 
     }
 
