@@ -12,7 +12,6 @@ import java.io.ByteArrayInputStream;
 public class WhenUI extends Stage<WhenUI> {
 
     @ExpectedScenarioState
-    @ProvidedScenarioState
     private UI ui;
 
     @ProvidedScenarioState
