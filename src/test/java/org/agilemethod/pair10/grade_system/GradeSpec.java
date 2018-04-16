@@ -20,7 +20,7 @@ public class GradeSpec extends ScenarioTest<GivenGrade, WhenGrade, ThenGrade> {
         given().a_grade();
 
         when().scores_are(81, 98, 84, 90, 93)
-                .and().weights_are(new int[] {10, 10, 10, 30, 40});
+                .and().weights_are(new float[] {0.1f, 0.1f, 0.1f, 0.3f, 0.4f});
 
         then().the_calculated_total_grade_should_be(91);
     }

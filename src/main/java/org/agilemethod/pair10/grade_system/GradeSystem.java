@@ -1,6 +1,8 @@
 package org.agilemethod.pair10.grade_system;
 
 public class GradeSystem {
+    public float weights[];
+
     public GradeSystem() {
 
     }

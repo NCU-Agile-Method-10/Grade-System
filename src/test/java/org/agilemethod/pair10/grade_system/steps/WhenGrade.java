@@ -10,7 +10,7 @@ public class WhenGrade extends Stage<WhenGrade> {
     private Grade grade;
 
     @ProvidedScenarioState
-    private int[] weights;
+    private float[] weights;
 
     public WhenGrade scores_are(int lab1, int lab2, int lab3, int midterm, int finalExam) {
         grade.lab1 = lab1;
@@ -21,7 +21,7 @@ public class WhenGrade extends Stage<WhenGrade> {
         return self();
     }
 
-    public WhenGrade weights_are(int[] weights) {
+    public WhenGrade weights_are(float[] weights) {
         this.weights = weights;
         return self();
     }

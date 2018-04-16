@@ -11,7 +11,7 @@ public class ThenGrade extends Stage<ThenGrade> {
     private Grade grade;
 
     @ExpectedScenarioState
-    private int[] weights;
+    private float[] weights;
 
     public ThenGrade the_grade_should_not_be_null() {
         assertThat(grade).isNotNull();

@@ -8,7 +8,7 @@ public class Grade {
 
     }
 
-    public int calculateTotalGrade(int[] weights) {
+    public int calculateTotalGrade(float[] weights) {
         return 0;
     }
 }
