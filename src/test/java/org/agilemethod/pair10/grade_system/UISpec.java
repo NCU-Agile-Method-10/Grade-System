@@ -8,15 +8,10 @@ import org.agilemethod.pair10.grade_system.steps.ThenUI;
 import org.agilemethod.pair10.grade_system.steps.WhenUI;
 import org.junit.Test;
 
-import java.io.InputStream;
-import java.io.PrintStream;
-
 import static org.agilemethod.pair10.grade_system.Helper.backupInOut;
 import static org.agilemethod.pair10.grade_system.Helper.resetInOut;
 
 public class UISpec extends ScenarioTest<GivenUI, WhenUI, ThenUI> {
-    private InputStream stdin;
-    private PrintStream stdout;
 
     @Test
     public void it_can_construct_a_ui() {
