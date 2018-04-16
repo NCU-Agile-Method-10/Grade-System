@@ -5,6 +5,8 @@ import com.tngtech.jgiven.annotation.ExpectedScenarioState;
 import com.tngtech.jgiven.annotation.ProvidedScenarioState;
 import org.agilemethod.pair10.grade_system.GradeSystem;
 
+import java.io.ByteArrayInputStream;
+
 import static org.agilemethod.pair10.grade_system.Helper.getOutputOf;
 
 public class WhenGradeSystem extends Stage<WhenGradeSystem> {
@@ -34,8 +36,13 @@ public class WhenGradeSystem extends Stage<WhenGradeSystem> {
         return self();
     }
 
-    public WhenGradeSystem weights_are(int[] weights) {
-        this.weights = weights;
+    public WhenGradeSystem update_weights(){
+        output = getOutputOf(() -> gradeSystem.updateWeights());
+        return self();
+    }
+
+    public WhenGradeSystem input_is(String input) {
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
         return self();
     }
 }

@@ -62,5 +62,31 @@ public class GradeSystemSpec extends ScenarioTest<GivenGradeSystem, WhenGradeSys
     @Test
     public void it_can_update_weights() {
         given().a_grade_system();
+
+        when().input_is("20\n20\n20\n20\n20\nY\n")
+                .and().update_weights();
+
+        then().the_output_should_be("舊配分：\n" +
+                "  lab1: 10%\n" +
+                "  lab2: 10%\n" +
+                "  lab3: 10%\n" +
+                "  midterm: 30%\n" +
+                "  final exam: 40%\n" +
+                "\n" +
+                "輸入新配分：\n" +
+                "  lab1: " +
+                "  lab2: " +
+                "  lab3: " +
+                "  midterm: " +
+                "  final exam: " +
+                "\n" +
+                "請確認新配分：\n" +
+                "  lab1: 20%\n" +
+                "  lab2: 20%\n" +
+                "  lab3: 20%\n" +
+                "  midterm: 20%\n" +
+                "  final exam: 20%\n" +
+                "\n" +
+                "以上正確嗎？ Y (Yes) 或 N (No)配分已更新\n");
     }
 }
