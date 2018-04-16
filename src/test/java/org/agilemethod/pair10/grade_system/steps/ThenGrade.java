@@ -18,7 +18,7 @@ public class ThenGrade extends Stage<ThenGrade> {
         return self();
     }
 
-    public ThenGrade the_caculated_total_grade_should_be(int totalGrade) {
+    public ThenGrade the_calculated_total_grade_should_be(int totalGrade) {
         assertThat(grade.calculateTotalGrade(weights)).isEqualTo(totalGrade);
         return self();
     }

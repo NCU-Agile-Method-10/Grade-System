@@ -16,12 +16,12 @@ public class GradeSpec extends ScenarioTest<GivenGrade, WhenGrade, ThenGrade> {
     }
 
     @Test
-    public void it_can_caculate_total_grade() {
+    public void it_can_calculate_total_grade() {
         given().a_grade();
 
         when().scores_are(81, 98, 84, 90, 93)
                 .and().weights_are(new int[] {10, 10, 10, 30, 40});
 
-        then().the_caculated_total_grade_should_be(91);
+        then().the_calculated_total_grade_should_be(91);
     }
 }
