@@ -21,7 +21,7 @@ public class ThenUI extends Stage<ThenUI> {
     @ExpectedScenarioState
     private String output;
 
-    public ThenUI ui_should_be_not_null() {
+    public ThenUI the_ui_should_not_be_null() {
         assertThat(ui).isNotNull();
         return self();
     }

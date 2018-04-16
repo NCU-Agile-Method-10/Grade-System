@@ -17,7 +17,7 @@ public class UISpec extends ScenarioTest<GivenUI, WhenUI, ThenUI> {
     public void it_can_construct_a_ui() {
         given().a_ui();
 
-        then().ui_should_be_not_null();
+        then().the_ui_should_not_be_null();
     }
 
     @Test
