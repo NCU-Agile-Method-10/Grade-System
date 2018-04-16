@@ -2,12 +2,9 @@ package org.agilemethod.pair10.grade_system.steps;
 
 import com.tngtech.jgiven.Stage;
 import com.tngtech.jgiven.annotation.ExpectedScenarioState;
-import org.agilemethod.pair10.grade_system.NoSuchCommandExceptions;
-import org.agilemethod.pair10.grade_system.NoSuchIDExceptions;
+import org.agilemethod.pair10.grade_system.NoSuchCommandException;
+import org.agilemethod.pair10.grade_system.NoSuchIDException;
 import org.agilemethod.pair10.grade_system.UI;
-
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatCode;
@@ -45,7 +42,7 @@ public class ThenUI extends Stage<ThenUI> {
     }
 
     public ThenUI should_not_pass_check_id() {
-        assertThatThrownBy(() -> ui.checkID(id)).isInstanceOf(NoSuchIDExceptions.class);
+        assertThatThrownBy(() -> ui.checkID(id)).isInstanceOf(NoSuchIDException.class);
         return self();
     }
 
@@ -55,7 +52,7 @@ public class ThenUI extends Stage<ThenUI> {
     }
 
     public ThenUI should_not_pass_prompt_command() {
-        output = getOutputOf(() -> assertThatThrownBy(() -> ui.promptCommand()).isInstanceOf(NoSuchCommandExceptions.class));
+        output = getOutputOf(() -> assertThatThrownBy(() -> ui.promptCommand()).isInstanceOf(NoSuchCommandException.class));
         return self();
     }
 }

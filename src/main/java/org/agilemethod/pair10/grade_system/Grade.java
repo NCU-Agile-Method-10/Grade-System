@@ -1,7 +1,7 @@
 package org.agilemethod.pair10.grade_system;
 
-public class Grades {
-    public Grades() {
+public class Grade {
+    public Grade() {
 
     }
 

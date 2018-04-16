@@ -5,7 +5,7 @@ public class UI {
 
     }
 
-    public void run() throws NoSuchIDExceptions, NoSuchCommandExceptions {
+    public void run() throws NoSuchIDException, NoSuchCommandException {
 
     }
 
@@ -13,7 +13,7 @@ public class UI {
         return "";
     }
 
-    public boolean checkID(String id) throws NoSuchIDExceptions {
+    public boolean checkID(String id) throws NoSuchIDException {
         return true;
     }
 
@@ -21,7 +21,7 @@ public class UI {
 
     }
 
-    public String promptCommand() throws NoSuchCommandExceptions {
+    public String promptCommand() throws NoSuchCommandException {
         return "";
     }
 
