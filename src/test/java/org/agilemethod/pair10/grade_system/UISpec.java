@@ -31,7 +31,7 @@ public class UISpec extends ScenarioTest<GivenUI, WhenUI, ThenUI> {
     }
 
     @Test
-    public void it_can_ckeck_correct_id() {
+    public void it_can_check_correct_id() {
         given().a_ui();
 
         when().id_is("962001044");
