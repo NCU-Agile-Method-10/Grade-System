@@ -9,7 +9,7 @@ import org.junit.Test;
 public class GradeSpec extends ScenarioTest<GivenGrade, WhenGrade, ThenGrade> {
 
     @Test
-    public void it_can_constructs_a_grade() {
+    public void it_can_construct_a_grade() {
         given().a_grade();
 
         then().the_grade_should_not_be_null();
