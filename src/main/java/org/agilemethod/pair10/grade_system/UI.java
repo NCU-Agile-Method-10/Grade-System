@@ -2,10 +2,26 @@ package org.agilemethod.pair10.grade_system;
 
 import java.util.Scanner;
 
+/**
+ *
+ * <h1>Main program</h1>
+ * The UI program implements an application
+ * that takes the user requests
+ * and prints out to the screen
+ *
+ *
+ *
+ * @version 1.0
+ * @since 2018-05-07
+ */
+
 public class UI {
     private GradeSystem gradeSystem;
     private Scanner scanner;
-
+  
+    /**
+     * Constructs a UI
+     */
     public UI() {
         /*
         construct gradeSystem
@@ -13,6 +29,12 @@ public class UI {
          */
     }
 
+    /**
+     * Run the main program
+     *
+     * @throws NoSuchIDException if there is no such id
+     * @throws NoSuchCommandException if there is no such command
+     */
     public void run() throws NoSuchIDException, NoSuchCommandException {
         /*
         loop
@@ -27,6 +49,11 @@ public class UI {
          */
     }
 
+    /**
+     * Asks user to enter the id.
+     *
+     * @return string id
+     */
     public String promptID() {
         /*
         print message for promptID
@@ -35,6 +62,12 @@ public class UI {
         return "";
     }
 
+    /**
+     * Checks whether the input id exists.
+     * @param id user id
+     * @return true if the id exists
+     * @throws NoSuchIDException if id have not found
+     */
     public boolean checkID(String id) throws NoSuchIDException {
         /*
         throw NoSuchIDException unless call gradeSystem.containsID with id
@@ -43,6 +76,10 @@ public class UI {
         return true;
     }
 
+    /**
+     * Prints welcome message for the user
+     * @param id user input id
+     */
     public void showWelcomeMsg(String id) {
         /*
         name = call gradeSystem.getName with id
@@ -50,6 +87,15 @@ public class UI {
          */
     }
 
+    /**
+     * Prints the four commands
+     * to prompt the user how to control the system
+     * and returns the user input
+     *
+     *
+     * @return command
+     * @throws NoSuchCommandException if there is no such command
+     */
     public String promptCommand() {
         /*
         print message for promptCommand
@@ -57,7 +103,7 @@ public class UI {
          */
         return "";
     }
-
+  
     public boolean doCommand(String id, String command) throws NoSuchCommandException {
         /*
         switch command
@@ -76,6 +122,9 @@ public class UI {
         return true;
     }
 
+    /**
+     * Prints the finish message
+     */
     public void showFinishMsg() {
         /*
         print finish message

@@ -2,10 +2,19 @@ package org.agilemethod.pair10.grade_system;
 
 import java.util.Map;
 
+/**
+ * This class stores the students list
+ *
+ * @version 1.0
+ * @since 2018-05-07
+ */
 public class GradeSystem {
     private Map<String, Grade> grades;
     private float weights[];
 
+    /**
+     * Constructs a grade system
+     */
     public GradeSystem() {
         /*
         construct grades
@@ -15,6 +24,11 @@ public class GradeSystem {
          */
     }
 
+    /**
+     * Checks whether the grade system contains the input id
+     * @param id user input id
+     * @return true/false
+     */
     public boolean containsID(String id) {
         /*
         return call grades.containsKey with id
@@ -22,6 +36,17 @@ public class GradeSystem {
         return true;
     }
 
+    /**
+     * Prints the grade
+     * @param id user id
+     */
+    public void showGrade(String id) {
+        /*
+        grade = call grades.get with id
+        print grade
+         */
+    }
+  
     public String getName(String id) {
         /*
         grade = call grades.get with id
@@ -30,13 +55,10 @@ public class GradeSystem {
         return "";
     }
 
-    public void showGrade(String id) {
-        /*
-        grade = call grades.get with id
-        print grade
-         */
-    }
-
+    /**
+     * Prints the rank
+     * @param id user id
+     */
     public void showRank(String id) {
         /*
         for each grade in grades
@@ -49,6 +71,9 @@ public class GradeSystem {
          */
     }
 
+    /**
+     * Updates the grade system's weights
+     */
     public void updateWeights() {
         /*
         print weights
