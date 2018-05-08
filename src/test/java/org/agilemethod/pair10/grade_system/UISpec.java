@@ -62,9 +62,9 @@ public class UISpec extends ScenarioTest<GivenUI, WhenUI, ThenUI> {
     public void it_can_prompt_command() {
         given().a_ui();
 
-        when().input_is("E");
+        when().input_is("Khassar_de_templari");
 
-        then().prompt_command_should_be("E")
+        then().prompt_command_should_be("Khassar_de_templari")
             .and().the_output_should_be("輸入指令\n" +
                 "1) G 顯示成績 (Grade)\n" +
                 "2) R 顯示排名 (Rank)\n" +
@@ -73,17 +73,24 @@ public class UISpec extends ScenarioTest<GivenUI, WhenUI, ThenUI> {
     }
 
     @Test
-    public void it_can_prompt_command_and_check_incorrect_command() {
+    public void it_can_do_command() {
         given().a_ui();
 
-        when().input_is("Khassar_de_templari");
+        when().id_is("962001044")
+            .and().command_is("Q");
 
-        then().should_not_pass_prompt_command()
-            .and().the_output_should_be("輸入指令\n" +
-                "1) G 顯示成績 (Grade)\n" +
-                "2) R 顯示排名 (Rank)\n" +
-                "3) W 更新配分 (Weight)\n" +
-                "4) E 離開選單 (Exit)\n");
+        then().should_do_command_successfully()
+            .and().the_output_should_be("結束了");
+    }
+
+    @Test
+    public void it_can_check_invalid_command() {
+        given().a_ui();
+
+        when().id_is("962001044")
+            .and().command_is("Zerashk_gulida");
+
+        then().should_not_do_command();
     }
 
     @Test

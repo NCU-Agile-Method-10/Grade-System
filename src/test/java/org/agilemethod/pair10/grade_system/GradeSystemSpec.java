@@ -34,6 +34,15 @@ public class GradeSystemSpec extends ScenarioTest<GivenGradeSystem, WhenGradeSys
     }
 
     @Test
+    public void it_can_get_name() {
+        given().a_grade_system();
+
+        when().id_is("962001044");
+
+        then().the_name_should_be("李威廷");
+    }
+
+    @Test
     public void it_can_show_grade() {
         given().a_grade_system();
 

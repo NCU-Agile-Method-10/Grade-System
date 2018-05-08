@@ -19,6 +19,9 @@ public class ThenUI extends Stage<ThenUI> {
     private String id;
 
     @ExpectedScenarioState
+    private String command;
+
+    @ExpectedScenarioState
     private String output;
 
     public ThenUI the_ui_should_not_be_null() {
@@ -47,12 +50,17 @@ public class ThenUI extends Stage<ThenUI> {
     }
 
     public ThenUI prompt_command_should_be(String command) {
-        output = getOutputOf(() -> assertThatCode(() -> assertThat(ui.promptCommand()).isEqualTo(command)).doesNotThrowAnyException());
+        output = getOutputOf(() -> assertThat(ui.promptCommand()).isEqualTo(command));
         return self();
     }
 
-    public ThenUI should_not_pass_prompt_command() {
-        output = getOutputOf(() -> assertThatThrownBy(() -> ui.promptCommand()).isInstanceOf(NoSuchCommandException.class));
+    public ThenUI should_do_command_successfully() {
+        output = getOutputOf(() -> assertThatCode(() -> ui.doCommand(id, command)).doesNotThrowAnyException());
+        return self();
+    }
+
+    public ThenUI should_not_do_command() {
+        assertThatThrownBy(() -> ui.doCommand(id, command)).isInstanceOf(NoSuchCommandException.class);
         return self();
     }
 }
