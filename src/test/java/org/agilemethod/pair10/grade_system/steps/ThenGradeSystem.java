@@ -31,6 +31,11 @@ public class ThenGradeSystem extends Stage<ThenGradeSystem> {
         return self();
     }
 
+    public ThenGradeSystem the_name_should_be(String name) {
+        assertThat(gradeSystem.getName(id)).isEqualTo(name);
+        return self();
+    }
+
     public ThenGradeSystem the_output_should_be(String output) {
         assertThat(this.output).isEqualTo(output);
         return self();

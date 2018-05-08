@@ -16,7 +16,9 @@ public class Grade {
      * Constructs a grade.
      */
     public Grade() {
-
+        /*
+        none
+         */
     }
 
     /**
@@ -25,6 +27,10 @@ public class Grade {
      * @return total grade
      */
     public int calculateTotalGrade(float[] weights) {
+        /*
+        totalGrade = calculate total grade by weights
+        return totalGrade
+         */
         return 0;
     }
 }

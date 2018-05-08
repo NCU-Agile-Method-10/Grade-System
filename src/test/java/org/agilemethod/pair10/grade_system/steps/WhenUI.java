@@ -33,6 +33,11 @@ public class WhenUI extends Stage<WhenUI> {
         return self();
     }
 
+    public WhenUI command_is(String command) {
+        this.command = command;
+        return self();
+    }
+
     public WhenUI show_welcome_message() {
         output = getOutputOf(() -> ui.showWelcomeMsg(id));
         return self();
