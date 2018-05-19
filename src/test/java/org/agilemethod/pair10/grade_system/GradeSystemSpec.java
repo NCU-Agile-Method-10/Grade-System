@@ -19,7 +19,7 @@ public class GradeSystemSpec extends ScenarioTest<GivenGradeSystem, WhenGradeSys
     public void it_can_check_if_it_contains_id() {
         given().a_grade_system();
 
-        when().id_is("962001044");
+        when().id_is("962001051");
 
         then().should_pass();
     }
@@ -37,7 +37,7 @@ public class GradeSystemSpec extends ScenarioTest<GivenGradeSystem, WhenGradeSys
     public void it_can_get_name() {
         given().a_grade_system();
 
-        when().id_is("962001044");
+        when().id_is("962001051");
 
         then().the_name_should_be("李威廷");
     }
@@ -46,7 +46,7 @@ public class GradeSystemSpec extends ScenarioTest<GivenGradeSystem, WhenGradeSys
     public void it_can_show_grade() {
         given().a_grade_system();
 
-        when().id_is("962001044")
+        when().id_is("962001051")
                 .and().show_grade();
 
         then().the_output_should_be("李威廷成績：\n" +
@@ -62,7 +62,7 @@ public class GradeSystemSpec extends ScenarioTest<GivenGradeSystem, WhenGradeSys
     public void it_can_show_rank() {
         given().a_grade_system();
 
-        when().id_is("962001044")
+        when().id_is("962001051")
                 .and().show_rank();
 
         then().the_output_should_be("李威廷排名第22\n");
@@ -96,6 +96,6 @@ public class GradeSystemSpec extends ScenarioTest<GivenGradeSystem, WhenGradeSys
                 "  midterm: 20%\n" +
                 "  final exam: 20%\n" +
                 "\n" +
-                "以上正確嗎？ Y (Yes) 或 N (No)配分已更新\n");
+                "以上正確嗎？ Y (Yes) 或 N (No) 配分已更新\n");
     }
 }
