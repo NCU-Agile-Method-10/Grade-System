@@ -114,7 +114,6 @@ public class UI {
      *
      *
      * @return command
-     * @throws NoSuchCommandException if there is no such command
      */
     public String promptCommand() {
         /*
@@ -132,7 +131,14 @@ public class UI {
         );
         return scanner.next();
     }
-  
+
+    /**
+     * Does the command
+     * @param id user id
+     * @param command command to do
+     * @return true if success
+     * @throws NoSuchCommandException if no such command
+     */
     public boolean doCommand(String id, String command) throws NoSuchCommandException {
         /*
         switch command
