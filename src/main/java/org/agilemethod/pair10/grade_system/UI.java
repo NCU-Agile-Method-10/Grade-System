@@ -25,8 +25,8 @@ public class UI {
     public UI() {
         /*
         construct gradeSystem
-        construct scanner
          */
+        gradeSystem = new GradeSystem();
     }
 
     /**
@@ -47,6 +47,19 @@ public class UI {
                 break unless call #doCommand with id and command
          call #showFinishMsg
          */
+        while (true) {
+            String id = promptID();
+            if (id.equals("Q"))
+                break;
+            checkID(id);
+            showWelcomeMsg(id);
+            while (true) {
+                String command = promptCommand();
+                if (!doCommand(id, command))
+                    break;
+            }
+        }
+        showFinishMsg();
     }
 
     /**
@@ -56,10 +69,13 @@ public class UI {
      */
     public String promptID() {
         /*
+        construct scanner
         print message for promptID
         return id by scanner
          */
-        return "";
+        scanner = new Scanner(System.in);
+        System.out.print("輸入 ID 或 Q (結束使用)？");
+        return scanner.next();
     }
 
     /**
@@ -73,6 +89,8 @@ public class UI {
         throw NoSuchIDException unless call gradeSystem.containsID with id
         return true
          */
+        if (!gradeSystem.containsID(id))
+            throw new NoSuchIDException();
         return true;
     }
 
@@ -85,6 +103,8 @@ public class UI {
         name = call gradeSystem.getName with id
         print welcome message with name
          */
+        String name = gradeSystem.getName(id);
+        System.out.print("Welcome " + name + "\n\n");
     }
 
     /**
@@ -98,10 +118,19 @@ public class UI {
      */
     public String promptCommand() {
         /*
+        construct scanner
         print message for promptCommand
         return command by scanner
          */
-        return "";
+        scanner = new Scanner(System.in);
+        System.out.print(
+                "輸入指令\n" +
+                "1) G 顯示成績 (Grade)\n" +
+                "2) R 顯示排名 (Rank)\n" +
+                "3) W 更新配分 (Weight)\n" +
+                "4) E 離開選單 (Exit)\n"
+        );
+        return scanner.next();
     }
   
     public boolean doCommand(String id, String command) throws NoSuchCommandException {
@@ -119,6 +148,21 @@ public class UI {
                 throw NoSuchCommandException
         return true
          */
+        switch (command) {
+            case "G":
+                gradeSystem.showGrade(id);
+                break;
+            case "R":
+                gradeSystem.showRank(id);
+                break;
+            case "W":
+                gradeSystem.updateWeights();
+                break;
+            case "E":
+                return false;
+            default:
+                throw new NoSuchCommandException();
+        }
         return true;
     }
 
@@ -129,5 +173,6 @@ public class UI {
         /*
         print finish message
          */
+        System.out.print("結束了");
     }
 }

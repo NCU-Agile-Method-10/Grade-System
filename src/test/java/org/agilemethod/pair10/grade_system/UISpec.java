@@ -34,7 +34,7 @@ public class UISpec extends ScenarioTest<GivenUI, WhenUI, ThenUI> {
     public void it_can_check_correct_id() {
         given().a_ui();
 
-        when().id_is("962001044");
+        when().id_is("962001051");
 
         then().should_pass_check_id();
     }
@@ -52,7 +52,7 @@ public class UISpec extends ScenarioTest<GivenUI, WhenUI, ThenUI> {
     public void it_can_show_welcome_message() {
         given().a_ui();
 
-        when().id_is("962001044")
+        when().id_is("962001051")
             .and().show_welcome_message();
 
         then().the_output_should_be("Welcome 李威廷\n\n");
@@ -76,18 +76,17 @@ public class UISpec extends ScenarioTest<GivenUI, WhenUI, ThenUI> {
     public void it_can_do_command() {
         given().a_ui();
 
-        when().id_is("962001044")
-            .and().command_is("Q");
+        when().id_is("962001051")
+            .and().command_is("E");
 
-        then().should_do_command_successfully()
-            .and().the_output_should_be("結束了");
+        then().should_do_command_successfully();
     }
 
     @Test
     public void it_can_check_invalid_command() {
         given().a_ui();
 
-        when().id_is("962001044")
+        when().id_is("962001051")
             .and().command_is("Zerashk_gulida");
 
         then().should_not_do_command();
