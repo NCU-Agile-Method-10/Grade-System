@@ -40,9 +40,9 @@ public class GradeSystem {
     }
 
     /**
-     * Checks whether the grade system contains the input id
-     * @param id user input id
-     * @return true/false
+     * Checks whether the grade system contains the id
+     * @param id user id
+     * @return true if contains the id
      */
     public boolean containsID(String id) {
         /*
@@ -71,7 +71,12 @@ public class GradeSystem {
                 "  total grade: " + grade.calculateTotalGrade(weights)
         );
     }
-  
+
+    /**
+     * Returns the name of the user
+     * @param id user id
+     * @return the name of the user
+     */
     public String getName(String id) {
         /*
         grade = call grades.get with id
