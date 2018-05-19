@@ -23,5 +23,13 @@ public class Main {
             print message for NoSuchCommandException
         }
          */
+        try {
+            UI ui = new UI();
+            ui.run();
+        } catch (NoSuchIDException e) {
+            System.out.println("ID 錯了!");
+        } catch (NoSuchCommandException e) {
+            System.out.println("指令錯了!");
+        }
     }
 }
